@@ -21,16 +21,7 @@ resource "aws_subnet" "subnet_pub_2" {
   }
 }
 
-resource "aws_subnet" "subnet_pub_3" {
-  vpc_id            = aws_vpc.main.id
-  cidr_block        = "${var.main_vpc_class_b}.3.0/24"
-  availability_zone = var.availability_zones[2]
-  tags = {
-    Name        = "app-pub-subnet-3-${terraform.workspace}"
-    Environment = terraform.workspace
-    Maintainer  = "Terraform"
-  }
-}
+
 
 resource "aws_subnet" "subnet_pri_app1" {
   vpc_id            = aws_vpc.main.id
@@ -54,20 +45,6 @@ resource "aws_subnet" "subnet_pri_app2" {
   availability_zone = var.availability_zones[1]
   tags = {
     Name        = "app-pri-subnet-2-${terraform.workspace}"
-    Environment = terraform.workspace
-    Maintainer  = "Terraform"
-    Type        = "private-subnets"
-                  "kubernetes.io/role/internal-elb" = 1    
-    #               "kubernetes.io/cluster/${local.eks_cluster_name}" = "shared"  
-                  "kubernetes.io/cluster/var.cluster_name" = "shared"  
-  }
-}
-resource "aws_subnet" "subnet_pri_app3" {
-  vpc_id            = aws_vpc.main.id
-  cidr_block        = "${var.main_vpc_class_b}.6.0/24"
-  availability_zone = var.availability_zones[2]
-  tags = {
-    Name        = "app-pri-subnet-3-${terraform.workspace}"
     Environment = terraform.workspace
     Maintainer  = "Terraform"
     Type        = "private-subnets"

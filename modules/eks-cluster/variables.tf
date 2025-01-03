@@ -1,18 +1,10 @@
-# //vpc
-# variable "aws_region" {}
-# variable "availability_zones" {}
-# variable "main_vpc_cidr" {}
-# variable "main_vpc_class_b" {}
 
-# Input Variables
-# AWS Region
 //ec2
 variable "aws_region" {
   description = "Region in which AWS Resources to be created"
   type        = string
-  default     = "eu-west-3"
+  default     = "eu-east-1"
 }
-
 # AWS EC2 Instance Type
 variable "instance_type" {
   description = "EC2 Instnace Type"
@@ -24,7 +16,7 @@ variable "instance_type" {
 variable "instance_keypair" {
   description = "AWS EC2 Key Pair that need to be associated with EC2 Instance"
   type        = string
-  default     = "advskill-key"
+  default     = "ansible-master"
 }
 
 variable "vpc_id" {
@@ -33,17 +25,15 @@ variable "vpc_id" {
   default     = ""
 }
 
-variable "public_subnets" { //3
+variable "public_subnets" { 
   description = "List of public subnet ids"
   type        = list(string)
-  # default     = ""
   nullable    = false
 }
 
-variable "private_subnets" { //2
+variable "private_subnets" { 
   description = "List of private subnet ids"
   type        = list(string)
-  # default     = ""
   nullable    = false
 }
 
@@ -59,18 +49,13 @@ variable "ec2_instance_sg_id" {
   default     = ""
 }
 
-# variable "instance_type" {
-#   type     = string
-#   description = "test"
-#   nullable    = false
-# }
 
 //EKS 
 # EKS Cluster Input Variables
 variable "cluster_name" {
   description = "Name of the EKS cluster. Also used as a prefix in names of related resources."
   type        = string
-  default     = "ADVSKILL-EKS"
+  default     = "ROCUEZ-EKS"
 }
 
 variable "cluster_service_ipv4_cidr" {
@@ -102,9 +87,8 @@ variable "cluster_endpoint_public_access_cidrs" {
   default     = ["0.0.0.0/0"]
 }
 
-# # Business Division
-# variable "business_divsion" {
-#   description = "Business Division in the large organization this Infrastructure belongs"
-#   type        = string
-#   default     = "ADVskill"
-# }
+
+
+variable "node_disk_size" {}
+variable "node_instace_type" {}
+variable "node_capacity_type" {}

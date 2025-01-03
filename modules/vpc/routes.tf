@@ -36,11 +36,6 @@ resource "aws_route_table_association" "public-assoc-2" {
   subnet_id      = aws_subnet.subnet_pub_2.id
   route_table_id = aws_route_table.main-public-rt.id
 }
-resource "aws_route_table_association" "public-assoc-3" {
-  subnet_id      = aws_subnet.subnet_pub_3.id
-  route_table_id = aws_route_table.main-public-rt.id
-}
-
 
 ###### PRIVATE Subnets assiosation with rotute table ######
 resource "aws_route_table_association" "private-assoc-1" {
@@ -49,9 +44,5 @@ resource "aws_route_table_association" "private-assoc-1" {
 }
 resource "aws_route_table_association" "private-assoc-2" {
   subnet_id      = aws_subnet.subnet_pri_app2.id
-  route_table_id = aws_route_table.main-private-rt.id
-}
-resource "aws_route_table_association" "private-assoc-3" {
-  subnet_id      = aws_subnet.subnet_pri_app3.id
   route_table_id = aws_route_table.main-private-rt.id
 }

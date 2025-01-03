@@ -6,7 +6,7 @@ resource "aws_vpc" "main" {
   enable_dns_hostnames = true
 
   tags = {
-    Name        = "advskill-${terraform.workspace}-vpc"
+    Name        = "rocuez-${terraform.workspace}-vpc"
     Environment = terraform.workspace
     Maintainer  = "Terraform"
   }

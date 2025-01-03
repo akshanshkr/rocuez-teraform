@@ -4,31 +4,6 @@ variable "availability_zones" {}
 variable "main_vpc_cidr" {}
 variable "main_vpc_class_b" {}
 
-# //cognito
-# variable "sms_config_external_id" {}
-# variable "email_config_email_sending_acc" {}
-# variable "email_config_ses_source_arn" {}
-# variable "email_config_from_email_address" {}
-
-# //rds-aurora
-# variable "nodes" {}
-# variable "engine" {}
-# variable "instance_class" {}
-# variable "pub_access" {}
-# variable "apply_immediately" {}
-# variable "engine_version" {}
-# variable "db_name" {}
-# variable "master_user" {}
-# variable "backup_retention_period" {}
-# variable "preferred_backup_window" {}
-# variable "iam_database_authentication_enabled" {}
-# variable "enabled_cloudwatch_logs_exports" {}
-# variable "skip_final_snapshot" {}
-# variable "monitoring_interval" {}
-# variable "performance_insights_enabled" {}
-# variable "performance_insights_retention_period" {}
-# variable "private_subnet_ids" {}
-
 //eks
 variable "instance_type" {
   description = "EC2 Instnace Type"
@@ -39,13 +14,13 @@ variable "instance_type" {
 variable "instance_keypair" {
   description = "AWS EC2 Key Pair that need to be associated with EC2 Instance"
   type        = string
-  default     = "advskill-key"
+  default     = "ansible-master.pem"
 }
 
 variable "cluster_name" {
   description = "Name of the EKS cluster. Also used as a prefix in names of related resources."
   type        = string
-  default     = "ADVSKILL-EKS"
+  default     = "testing_rocuez"
 }
 
 variable "cluster_service_ipv4_cidr" {
@@ -83,3 +58,8 @@ variable "cluster_endpoint_public_access_cidrs" {
 #   type        = string
 #   default     = "ADVskill"
 # }
+variable "node_disk_size" {}
+variable "node_instace_type" {}
+variable "node_capacity_type" {}
+
+

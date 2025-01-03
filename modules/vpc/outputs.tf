@@ -12,10 +12,6 @@ output "subnet_pub_app2" {
   value = aws_subnet.subnet_pub_2.id
 }
 
-output "subnet_pub_app3" {
-  value = aws_subnet.subnet_pub_3.id
-}
-
 output "subnet_pri_app1" {
   value = aws_subnet.subnet_pri_app1.id
 }
@@ -23,11 +19,6 @@ output "subnet_pri_app1" {
 output "subnet_pri_app2" {
   value = aws_subnet.subnet_pri_app2.id
 }
-
-output "subnet_pri_app3" {
-  value = aws_subnet.subnet_pri_app3.id
-}
-
 
 # security groups
 output "sg_bastion" {

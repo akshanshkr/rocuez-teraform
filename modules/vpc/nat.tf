@@ -8,7 +8,7 @@ resource "aws_nat_gateway" "main-natgw" {
   depends_on    = [aws_internet_gateway.main-igw]
 
   tags = {
-    Name        = "advskill-${terraform.workspace}-nat"
+    Name        = "rocuez-${terraform.workspace}-nat"
     Environment = terraform.workspace
     Maintainer  = "Terraform"
   }

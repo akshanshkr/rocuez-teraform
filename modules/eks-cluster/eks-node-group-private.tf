@@ -10,13 +10,13 @@ resource "aws_eks_node_group" "eks_ng_private" {
   version         = var.cluster_version #(Optional: Defaults to EKS Cluster Kubernetes version)    
 
   ami_type       = "AL2_x86_64"
-  capacity_type  = "ON_DEMAND"
-  disk_size      = 40
-  instance_types = ["t3.medium"]
+  capacity_type  = var.node_capacity_type
+  disk_size      = var.node_disk_size
+  instance_types = var.node_instace_type
 
 
   remote_access {
-    ec2_ssh_key = "advskill-key"
+    ec2_ssh_key = "ansible-master"
   }
 
   scaling_config {
