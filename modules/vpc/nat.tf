@@ -8,8 +8,8 @@ resource "aws_nat_gateway" "main-natgw" {
   depends_on    = [aws_internet_gateway.main-igw]
 
   tags = {
-    Name        = "rocuez-${terraform.workspace}-nat"
-    Environment = terraform.workspace
+    Name        = "rocuez-${var.env}-nat"
+    Environment = var.env
     Maintainer  = "Terraform"
   }
 }

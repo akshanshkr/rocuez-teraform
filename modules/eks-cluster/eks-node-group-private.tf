@@ -20,9 +20,10 @@ resource "aws_eks_node_group" "eks_ng_private" {
   }
 
   scaling_config {
-    desired_size = 1
-    min_size     = 1
-    max_size     = 4
+    
+    desired_size = var.node_scaling_config_desired_size
+    min_size     = var.node_scaling_config_min_size
+    max_size     = var.node_scaling_config_max_size
   }
 
   # Desired max percentage of unavailable worker nodes during node group update.
@@ -47,4 +48,4 @@ resource "aws_eks_node_group" "eks_ng_private" {
     Maintainer  = "Terraform"
   }
 }
-#*/
+

@@ -20,3 +20,11 @@ node_capacity_type                   = "ON_DEMAND"
 env                                  = "dev"
 node_ec2_ssh_key                     = "ansible-master"
 node_ami_type                        = "AL2_x86_64"
+node_scaling_config_desired_size     = 1
+node_scaling_config_min_size         = 1
+node_scaling_config_max_size         = 4
+
+//ecr
+ecr_repository_name                  = "rocuez-testing-ecr-repository"
+image_tag_mutability                 = "IMMUTABLE"
+scan_on_push                         = true

@@ -21,14 +21,6 @@ output "subnet_pri_app2" {
 }
 
 # security groups
-output "sg_bastion" {
-  value = aws_security_group.sg_bastion.id
-}
-
-output "sg_bastion_name" {
-  value = aws_security_group.sg_bastion.name
-}
-
 output "sg_ec2_lb" {
   value = aws_security_group.sg_ec2_lb.id
 }
@@ -39,8 +31,4 @@ output "sg_ec2" {
 
 output "sg_ec2_name" {
   value = aws_security_group.sg_ec2.name
-}
-
-output "sg_rds" {
-  value = aws_security_group.sg_rds.id
 }

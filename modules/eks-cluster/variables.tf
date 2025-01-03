@@ -95,3 +95,7 @@ variable "node_capacity_type" {}
 variable "env" {}
 variable "node_ec2_ssh_key" {}
 variable "node_ami_type" {}
+variable "node_scaling_config_desired_size" {}
+variable "node_scaling_config_min_size" {}
+variable "node_scaling_config_max_size" {}
+
