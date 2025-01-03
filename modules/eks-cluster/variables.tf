@@ -9,7 +9,7 @@ variable "aws_region" {
 variable "instance_type" {
   description = "EC2 Instnace Type"
   type        = string
-  default     = "t3.micro"
+  default     = "t2.micro"
 }
 
 # AWS EC2 Instance Key Pair
@@ -92,3 +92,6 @@ variable "cluster_endpoint_public_access_cidrs" {
 variable "node_disk_size" {}
 variable "node_instace_type" {}
 variable "node_capacity_type" {}
+variable "env" {}
+variable "node_ec2_ssh_key" {}
+variable "node_ami_type" {}

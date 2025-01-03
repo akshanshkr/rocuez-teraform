@@ -17,3 +17,6 @@ cluster_endpoint_public_access_cidrs = ["0.0.0.0/0"]
 node_disk_size                       = "40"
 node_instace_type                    = ["t2.micro"]
 node_capacity_type                   = "ON_DEMAND"
+env                                  = "dev"
+node_ec2_ssh_key                     = "ansible-master"
+node_ami_type                        = "AL2_x86_64"

@@ -24,5 +24,8 @@ module "eks-cluster" {
   node_capacity_type                   = var.node_capacity_type
   node_instace_type                    = var.node_instace_type
   node_disk_size                       = var.node_disk_size
+  env                                  = var.env
+  node_ec2_ssh_key                     = var.node_ec2_ssh_key
+  node_ami_type                        = var.node_ami_type
   # business_divsion                     = var.business_divsion
   }

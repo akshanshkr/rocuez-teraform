@@ -1,7 +1,6 @@
 # IAM Role for EKS Node Group 
 resource "aws_iam_role" "eks_nodegroup_role" {
-  # name = "${local.name}-eks-nodegroup-role"
-    name = "${terraform.workspace}-eks-nodegroup-role"
+    name = "${var.env}-eks-nodegroup-role"
 
   assume_role_policy = jsonencode({
     Statement = [{

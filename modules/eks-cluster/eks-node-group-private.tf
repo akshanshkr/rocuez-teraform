@@ -4,19 +4,19 @@ resource "aws_eks_node_group" "eks_ng_private" {
   cluster_name = aws_eks_cluster.eks_cluster.name
 
   # node_group_name = "${local.name}-eks-ng-private"
-  node_group_name = "${terraform.workspace}-eks-ng-private"
+  node_group_name = "${var.env}-eks-ng-private"
   node_role_arn   = aws_iam_role.eks_nodegroup_role.arn
   subnet_ids      = var.private_subnets
   version         = var.cluster_version #(Optional: Defaults to EKS Cluster Kubernetes version)    
 
-  ami_type       = "AL2_x86_64"
+  ami_type       = var.node_ami_type
   capacity_type  = var.node_capacity_type
   disk_size      = var.node_disk_size
   instance_types = var.node_instace_type
 
 
   remote_access {
-    ec2_ssh_key = "ansible-master"
+    ec2_ssh_key = var.node_ec2_ssh_key
   }
 
   scaling_config {
@@ -42,8 +42,8 @@ resource "aws_eks_node_group" "eks_ng_private" {
   #   Name = "Private-Node-Group"
   # }
   tags = {
-    Name        = "advskill-${terraform.workspace}-Private-Node-Group"
-    Environment = terraform.workspace
+    Name        = "rocuez-${var.env}-Private-Node-Group"
+    Environment = var.env
     Maintainer  = "Terraform"
   }
 }

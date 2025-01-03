@@ -1,8 +1,6 @@
 # Create IAM Role
 resource "aws_iam_role" "eks_master_role" {
-  # name = "${local.name}-eks-master-role"
-    name = "${terraform.workspace}-eks-master-role"
-
+    name = "${var.env}-eks-master-role"
   assume_role_policy = <<POLICY
 {
   "Version": "2012-10-17",

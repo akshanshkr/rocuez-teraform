@@ -10,7 +10,6 @@ output "cluster_version" {
   value       = aws_eks_cluster.eks_cluster.version
 }
 
-
 output "node_group_private_id" {
   description = "Node Group 1 ID"
   value       = aws_eks_node_group.eks_ng_private.id
