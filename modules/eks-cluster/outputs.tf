@@ -10,6 +10,11 @@ output "cluster_version" {
   value       = aws_eks_cluster.eks_cluster.version
 }
 
+output "cluster_oidc_url" {
+  description = "The OIDC provider URL for the EKS cluster."
+  value       = aws_eks_cluster.eks_cluster.identity[0].oidc[0].issuer
+}
+
 output "node_group_private_id" {
   description = "Node Group 1 ID"
   value       = aws_eks_node_group.eks_ng_private.id

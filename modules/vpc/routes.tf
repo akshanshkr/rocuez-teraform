@@ -8,7 +8,7 @@ resource "aws_route_table" "main-public-rt" {
 
   tags = {
     Name        = "main-public-rt"
-    Environment = terraform.workspace
+    Environment = var.env
     Maintainer  = "Terraform"
   }
 }
@@ -22,7 +22,7 @@ resource "aws_route_table" "main-private-rt" {
 
   tags = {
     Name        = "main-private-rt"
-    Environment = terraform.workspace
+    Environment = var.env
     Maintainer  = "Terraform"
   }
 }

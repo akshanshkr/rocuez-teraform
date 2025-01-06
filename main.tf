@@ -45,3 +45,12 @@ module "eks-cluster" {
       Environment = var.env
     }
 }
+
+
+module "oidc_connector" {
+    source          = "./modules/oidc"
+    oidc_url        = module.eks-cluster.cluster_oidc_url
+    client_id_list  = ["sts.amazonaws.com"]
+    env             = var.env
+}
+
