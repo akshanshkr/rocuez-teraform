@@ -1,9 +1,13 @@
 terraform {
   backend "s3" {
-    bucket         = "rocuez-backed-testing"
+    bucket         = "rocuez-infra-testing"
+    # bucket         = "rocuez-backed-testing"
     key            = "terraform.tfstate"
-    region         = "us-east-1"
+    region         = "ap-south-1"
+    # region         = "us-east-1"
     encrypt        = true
-    dynamodb_table = "rocuez-backed-db"
+    dynamodb_table = "rocuez-backed-db-testing"
+    # dynamodb_table = "rocuez-backed-db"
+
   }
 }

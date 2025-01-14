@@ -1,7 +1,3 @@
-# variable "repository_name" {
-#   description = "Name of the ECR repository"
-#   type        = string
-# }
 
 variable "image_tag_mutability" {
   description = "Tag mutability setting for the ECR repository (MUTABLE or IMMUTABLE)"
@@ -21,7 +17,19 @@ variable "tags" {
   default     = {}
 }
 
-variable "ecr_repository_name" {
-    default = {}
+# variable "ecr_repository_name" {
+#     default = {}
+# }
+variable "ecr_repository_names" {
+  description = "List of ECR repository names"
+  type        = list(string)
+  # default     = [
+  #   "prod-api-v18",
+  #   "prod-cron-v18",
+  #   "prod-socket-v18",
+  #   "uat-api-v18",
+  #   "python-api-v18"
+  # ]
 }
+
 

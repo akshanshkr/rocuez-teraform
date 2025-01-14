@@ -38,7 +38,7 @@ module "eks-cluster" {
 
   module "ecr" {
     source                   = "./modules/ecr"
-    ecr_repository_name          = var.ecr_repository_name
+    ecr_repository_names          = var.ecr_repository_name
     image_tag_mutability     = var.image_tag_mutability
     scan_on_push             = var.scan_on_push
     tags = {
@@ -53,4 +53,13 @@ module "oidc_connector" {
     client_id_list  = ["sts.amazonaws.com"]
     env             = var.env
 }
+
+module "secrets" {
+  source        = "./modules/secrets"
+  # secret_names  = ["pod1-secret", "pod2-secret", "pod3-secret", "pod4-secret", "pod5-secret", "pod6-secret"]
+  # secret_values = ["value1", "value2", "value3", "value4", "value5", "value6"]
+  secret_names = var.secret_names
+  secret_values = var.secret_values
+}
+
 

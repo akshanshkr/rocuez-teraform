@@ -1,6 +1,6 @@
 # Create IAM Role
 resource "aws_iam_role" "eks_master_role" {
-    name = "${var.env}-eks-master-role"
+    name = "${var.env}-eks-master-role-testing"
   assume_role_policy = <<POLICY
 {
   "Version": "2012-10-17",

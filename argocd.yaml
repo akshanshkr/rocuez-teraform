@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: rocuez-dev         # Replace with a unique name for the application
+  namespace: argocd        # The namespace where ArgoCD is installed
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/akshanshkr/rocuez-argocd.git'
+    path: rocuez-dev
+    targetRevision: main
+    helm:
+      valueFiles:
+        - values.yaml
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: dev-app
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - PruneLast=true
+      - CreateNamespace=true

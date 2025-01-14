@@ -72,5 +72,7 @@ variable "node_scaling_config_max_size" {}
 variable "ecr_repository_name" {}
 variable "image_tag_mutability" {}
 variable "scan_on_push" {}
+variable "secret_names" {}
+variable "secret_values" {}
 
 
