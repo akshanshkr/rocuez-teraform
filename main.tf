@@ -54,12 +54,19 @@ module "oidc_connector" {
     env             = var.env
 }
 
+# module "secrets" {
+#   source        = "./modules/secrets"
+#   secret_names = var.secret_names
+#   secret_values = var.secret_values
+# }
+
 module "secrets" {
   source        = "./modules/secrets"
-  # secret_names  = ["pod1-secret", "pod2-secret", "pod3-secret", "pod4-secret", "pod5-secret", "pod6-secret"]
-  # secret_values = ["value1", "value2", "value3", "value4", "value5", "value6"]
-  secret_names = var.secret_names
+  secret_names  = var.secret_names
   secret_values = var.secret_values
 }
+
+# Optional: Add other modules or resources here if needed
+
 
 

@@ -38,6 +38,30 @@ image_tag_mutability                 = "IMMUTABLE"
 scan_on_push                         = true
 
 //secrets
-secret_names                         = ["dev-api-v18-secret", "dev-cron-secret", "dev-socket-secret", "python-secret"]
-secret_values                        = ["value1", "value2", "value3", "value4"]
+# secret_names                         = ["cuez-api-secret", "cuez-cron-secret", "cuez-socket-secret", "cuez-python-secret"]
+# secret_values                        = ["value1", "value2", "value3", "value4"]
+
+
+secret_names = [
+  "cuez-api-secret",
+  "cuez-cron-secret",
+  "cuez-socket-secret",
+  "cuez-python-secret"
+]
+
+secret_values = [
+  {
+    api_key      = "api_value1"
+  },
+  {
+    api_key      = "api_value2"
+  },
+  {
+    api_key      = "api_value3"
+  },
+  {
+    api_key      = "api_value4"
+  }
+]
+
 

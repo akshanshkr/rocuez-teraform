@@ -76,3 +76,15 @@ variable "secret_names" {}
 variable "secret_values" {}
 
 
+# variable "secret_names" {
+#   description = "List of secret names"
+#   type        = list(string)
+# }
+
+# variable "secret_values" {
+#   description = "List of key-value pairs for each secret"
+#   type        = list(map(string))
+# }
+
+
+
